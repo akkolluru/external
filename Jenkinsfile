@@ -4,11 +4,17 @@ pipeline{
     stages{
         stage("save changes to file"){
             steps{
-        echo index.html > output.txt
-        archiveArtifacts artifacts: "output.txt"
+        sh "echo index.html > output.txt"
             }
+            
+    }
+
+    post{
+        always{
+            archiveArtifacts artifacts: "output.txt"
+        }
     }
             
 
-}
+
 }
