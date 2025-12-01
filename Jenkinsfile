@@ -4,7 +4,9 @@ pipeline{
     stages {
         stage("save code") {
             steps{
-                echo index.html > output.txt
+                script {
+                    copy(file:"index.tml", tofile:"output.txt")
+                }
             }
         }
 
