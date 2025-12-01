@@ -5,7 +5,7 @@ pipeline{
         stage("save code") {
             steps{
                 script {
-                    copy(file:"index.tml", tofile:"output.txt")
+                    copy 'index.html', 'output.txt'
                 }
             }
         }
