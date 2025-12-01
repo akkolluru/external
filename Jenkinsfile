@@ -5,7 +5,7 @@ pipeline{
         stage("save code") {
             steps{
                 script {
-                    echo index.html > output.txt
+                    sh "cat index.html > output.txt"
                     }
             }
         }
