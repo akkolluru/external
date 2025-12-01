@@ -1,20 +1,17 @@
 pipeline{
     agent any
 
-    stages{
-        stage("save changes to file"){
+    stages {
+        stage("save code") {
             steps{
-        sh "echo index.html > output.txt"
+                echo index.html > output.txt
             }
-            
-    }
+        }
 
+    }
     post{
-        always{
-            archiveArtifacts artifacts: "output.txt"
+        always {
+            archiveArtifacts artifacts: 'output.txt' 
         }
     }
-            
-
-
 }
