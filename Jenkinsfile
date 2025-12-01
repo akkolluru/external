@@ -5,8 +5,8 @@ pipeline{
         stage("save code") {
             steps{
                 script {
-                    copy 'index.html', 'output.txt'
-                }
+                    echo index.html > output.txt
+                    }
             }
         }
 
